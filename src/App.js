@@ -1,4 +1,54 @@
+import Card from "./component/Card";
+
 function App() {
+  const detail1 = [
+    {
+      "jam": "03:15",
+      "tanggal":"18 Februari 2023",
+      "nama":"Ayam Tangkap",
+      "pengeluaran":77249
+    },
+    {
+      "jam": "03:15",
+      "tanggal":"18 Februari 2023",
+      "nama":"Mie Rebus",
+      "pengeluaran":32154
+    },
+  ];
+
+  const detail2 = [
+    {
+        "jam": "03:15",
+        "tanggal":"18 Februari 2023",
+        "nama":"Ayam Tangkap",
+        "pengeluaran":77249
+    },
+    {
+        "jam": "03:15",
+        "tanggal":"18 Februari 2023",
+        "nama":"Mie Rebus",
+        "pengeluaran":32154
+    },
+    {
+        "jam": "00:20",
+        "tanggal":"17 Februari 2023",
+        "nama":"Soto Kuning",
+        "pengeluaran":34992
+    },
+    {
+        "jam": "05:59",
+        "tanggal":"17 Februari 2023",
+        "nama":"Ayam Geprek",
+        "pengeluaran":37674
+    },
+    {
+        "jam": "05:45",
+        "tanggal":"16 Februari 2023",
+        "nama":"Otak-otak",
+        "pengeluaran":11971
+    }
+  ];
+
   return (
     <>
       <div className="p-4">
@@ -11,233 +61,12 @@ function App() {
 
         {/* Cards */}
         <main className="grid grid-cols-12 gap-3 mt-5">
-          {/* Card */}
-          <div className="col-span-3 text-sm border border-gray-300/50 rounded-sm shadow-[0_1px_4px_0_rgba(0,0,0,0.25)] px-2.5 py-3.5">
-            <h2 className="font-bold text-lg pb-1.5">18 Februari</h2>
-            <table className="table-auto w-full">
-              <tbody>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-              </tbody>
-            </table>
-            <div className="flex justify-end gap-x-8 font-bold border-t-2 border-gray-300/75 pt-1.5">
-              <p>Total</p>
-              <p>Rp 316.747</p>
-            </div>
-          </div>
-          {/* Card */}
-          <div className="col-span-3 text-sm border border-gray-300/50 rounded-sm shadow-[0_1px_4px_0_rgba(0,0,0,0.25)] px-2.5 py-3.5">
-            <h2 className="font-bold text-lg pb-1.5">18 Februari</h2>
-            <table className="table-auto w-full">
-              <tbody>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-              </tbody>
-            </table>
-            <div className="flex justify-end gap-x-8 font-bold border-t-2 border-gray-300/75 pt-1.5">
-              <p>Total</p>
-              <p>Rp 316.747</p>
-            </div>
-          </div>
-          {/* Card */}
-          <div className="col-span-3 text-sm border border-gray-300/50 rounded-sm shadow-[0_1px_4px_0_rgba(0,0,0,0.25)] px-2.5 py-3.5">
-            <h2 className="font-bold text-lg pb-1.5">18 Februari</h2>
-            <table className="table-auto w-full">
-              <tbody>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-              </tbody>
-            </table>
-            <div className="flex justify-end gap-x-8 font-bold border-t-2 border-gray-300/75 pt-1.5">
-              <p>Total</p>
-              <p>Rp 316.747</p>
-            </div>
-          </div>
-          {/* Card */}
-          <div className="col-span-3 text-sm border border-gray-300/50 rounded-sm shadow-[0_1px_4px_0_rgba(0,0,0,0.25)] px-2.5 py-3.5">
-            <h2 className="font-bold text-lg pb-1.5">18 Februari</h2>
-            <table className="table-auto w-full">
-              <tbody>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-              </tbody>
-            </table>
-            <div className="flex justify-end gap-x-8 font-bold border-t-2 border-gray-300/75 pt-1.5">
-              <p>Total</p>
-              <p>Rp 316.747</p>
-            </div>
-          </div>
-          {/* Card */}
-          <div className="col-span-3 text-sm border border-gray-300/50 rounded-sm shadow-[0_1px_4px_0_rgba(0,0,0,0.25)] px-2.5 py-3.5">
-            <h2 className="font-bold text-lg pb-1.5">18 Februari</h2>
-            <table className="table-auto w-full">
-              <tbody>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-              </tbody>
-            </table>
-            <div className="flex justify-end gap-x-8 font-bold border-t-2 border-gray-300/75 pt-1.5">
-              <p>Total</p>
-              <p>Rp 316.747</p>
-            </div>
-          </div>
-          {/* Card */}
-          <div className="col-span-3 text-sm border border-gray-300/50 rounded-sm shadow-[0_1px_4px_0_rgba(0,0,0,0.25)] px-2.5 py-3.5">
-            <h2 className="font-bold text-lg pb-1.5">18 Februari</h2>
-            <table className="table-auto w-full">
-              <tbody>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-                <tr className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">03:15</td>
-                  <td className="pl-1.5 py-1.5">Ayam Tangkap</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp 77.249</td>
-                </tr>
-              </tbody>
-            </table>
-            <div className="flex justify-end gap-x-8 font-bold border-t-2 border-gray-300/75 pt-1.5">
-              <p>Total</p>
-              <p>Rp 316.747</p>
-            </div>
-          </div>
+          <Card detail={detail1} />
+          <Card detail={detail2} />
+          <Card detail={detail1} />
+          <Card detail={detail1} />
+          <Card detail={detail2} />
+          <Card detail={detail1} />
         </main>
       </div>
     </>
