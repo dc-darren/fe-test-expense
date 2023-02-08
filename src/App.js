@@ -91,12 +91,12 @@ function App() {
 
   return (
     <>
-      <div className="min-h-screen relative p-4">
+      <div className={`min-h-screen relative p-4 ${isModalOpen ? 'h-screen overflow-hidden' : ''}`}>
         {/* Header */}
-        <header className="text-center">
-          <h1 className="text-3xl">Diari Jajan {month} {year}</h1>
-          <p className="text-xl">Pengeluaran Bulan Ini Rp {(total.current).toLocaleString().replaceAll(',', '.')}</p>
-          <button className="modal-open bg-violet-800 uppercase font-medium text-sm text-white rounded-sm px-3.5 py-1.5 mt-3 smooth-trans hover:bg-violet-900">Tambah Item</button>
+        <header className="text-left sm:text-center">
+          <h1 className="text-2xl sm:text-3xl">Diari Jajan {month} {year}</h1>
+          <p className="text-base sm:text-xl">Pengeluaran Bulan Ini Rp {(total.current).toLocaleString().replaceAll(',', '.')}</p>
+          <button className="modal-open w-full sm:w-fit bg-violet-800 uppercase font-medium text-sm text-white rounded-sm px-5 py-2 mt-3 smooth-trans hover:bg-violet-900">Tambah Item</button>
         </header>
 
         {/* Cards */}
@@ -112,7 +112,7 @@ function App() {
         <div className={`modal ${isModalOpen ? '' : 'opacity-0 pointer-events-none'}`}>
           <div className="modal-overlay absolute w-screen h-screen bg-black/80 left-0 top-0"></div>
           {/* Modal Content */}
-          <form onSubmit={(e) => handleFormSubmit(e)} className="absolute w-80 flex flex-col gap-y-4 bg-white rounded-sm p-3.5 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-20">
+          <form onSubmit={(e) => handleFormSubmit(e)} className="absolute w-4/5 sm:w-80 flex flex-col gap-y-4 bg-white rounded-sm p-3.5 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-20">
             <p className="font-medium text-xl">Tambah Entri</p>
             <div className="w-full text-sm">
               <label htmlFor="nama" className="block">Nama</label>
@@ -123,8 +123,8 @@ function App() {
               <input type="number" id="harga" className="w-full border border-gray-300/75 rounded-sm px-2 py-1.5 mt-1" value={entryPrice} onChange={(e) => setEntryPrice(e.target.value)} placeholder="Masukkan harga" />
             </div>
             <div className="flex justify-end gap-x-2">
-              <button className="modal-close bg-gray-500 uppercase font-medium text-sm text-white rounded-sm px-3.5 py-1.5 mt-3 smooth-trans hover:bg-gray-600">Batal</button>
-              <button type="submit" className="bg-violet-800 uppercase font-medium text-sm text-white rounded-sm px-3.5 py-1.5 mt-3 smooth-trans hover:bg-violet-900">Kirim</button>
+              <button className="modal-close w-full bg-gray-500 uppercase font-medium text-sm text-white rounded-sm px-3.5 py-1.5 mt-3 smooth-trans hover:bg-gray-600">Batal</button>
+              <button type="submit" className="w-full bg-violet-800 uppercase font-medium text-sm text-white rounded-sm px-3.5 py-1.5 mt-3 smooth-trans hover:bg-violet-900">Kirim</button>
             </div>
           </form>
         </div>

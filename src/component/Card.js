@@ -3,7 +3,7 @@ const Card = ({ year, date, detail }) => {
 
   return (
     <>
-      <div className="col-span-3 text-sm border border-gray-300/50 rounded-sm shadow-[0_1px_4px_0_rgba(0,0,0,0.25)] px-2.5 py-3.5">
+      <div className="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 text-sm border border-gray-300/50 rounded-sm shadow-[0_1px_4px_0_rgba(0,0,0,0.25)] px-2.5 py-3.5">
         <h2 className="font-bold text-lg pb-1.5">{date.split(year)}</h2>
         <table className="table-auto w-full">
           <tbody>
