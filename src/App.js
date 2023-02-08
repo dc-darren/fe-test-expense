@@ -3,16 +3,57 @@ import { useEffect, useRef, useState } from "react";
 import Card from "./component/Card";
 
 function App() {
-  const month = "Februari";
-  const year = 2023;
+  const today = new Date();
+  const monthNames = [
+    'Januari',
+    'Februari',
+    'Maret',
+    'April',
+    'Mei',
+    'Juni',
+    'Juli',
+    'Agustus',
+    'September',
+    'Oktober',
+    'November',
+    'Desember'
+  ];
+
+  const month = monthNames[today.getMonth()];
+  const year = today.getFullYear();
   const url = "http://localhost:8000/detail";
 
   const [detail, setDetail] = useState(null);
   let total = useRef(0);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [newName, setNewName] = useState("");
-  const [newPrice, setNewPrice] = useState(0);
+  const [entryName, setEntryName] = useState("");
+  const [entryPrice, setEntryPrice] = useState(0);
+
+  // Script for Form in Modal
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    if ((entryName !== '') && (entryPrice > 0)) {
+      const now = new Date();
+      const entryDate = now.getDate();
+      const entryMonth = monthNames[now.getMonth()];
+      const entryHour = String(now.getHours()).padStart(2, '0');;
+      const entryMinute = String(now.getMinutes()).padStart(2, '0');;
+
+      const tanggal = entryDate + ' ' + entryMonth;
+      const jam = entryHour + ':' + entryMinute;
+      const nama = entryName;
+      const pengeluaran = parseInt(entryPrice);
+
+      if (!detail[tanggal]) detail[tanggal] = [];
+      detail[tanggal].push({jam, nama, pengeluaran});
+      total.current += pengeluaran;
+
+      setEntryName("");
+      setEntryPrice(0);
+    }
+  }
 
   useEffect(() => {
     total.current = 0;
@@ -46,7 +87,6 @@ function App() {
   overlay?.addEventListener("click", toggleModal);
 
   let closemodal = document.querySelector(".modal-close");
-  console.log(closemodal)
   closemodal?.addEventListener("click", toggleModal);
 
   return (
@@ -72,15 +112,15 @@ function App() {
         <div className={`modal ${isModalOpen ? '' : 'opacity-0 pointer-events-none'}`}>
           <div className="modal-overlay absolute w-screen h-screen bg-black/80 left-0 top-0"></div>
           {/* Modal Content */}
-          <form onSubmit={(e) => e.preventDefault()} className="absolute w-80 flex flex-col gap-y-4 bg-white rounded-sm p-3.5 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-20">
+          <form onSubmit={(e) => handleFormSubmit(e)} className="absolute w-80 flex flex-col gap-y-4 bg-white rounded-sm p-3.5 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-20">
             <p className="font-medium text-xl">Tambah Entri</p>
             <div className="w-full text-sm">
               <label htmlFor="nama" className="block">Nama</label>
-              <input type="text" id="nama" className="w-full border border-gray-300/75 rounded-sm px-2 py-1.5 mt-1" value={newName} onChange={(e) => setNewName(e.target.value)} placeholder="Masukkan nama" />
+              <input type="text" id="nama" className="w-full border border-gray-300/75 rounded-sm px-2 py-1.5 mt-1" value={entryName} onChange={(e) => setEntryName(e.target.value)} placeholder="Masukkan nama" />
             </div>
             <div className="w-full text-sm">
               <label htmlFor="harga" className="block">Harga</label>
-              <input type="number" id="harga" className="w-full border border-gray-300/75 rounded-sm px-2 py-1.5 mt-1" value={newPrice} onChange={(e) => setNewPrice(e.target.value)} placeholder="Masukkan harga" />
+              <input type="number" id="harga" className="w-full border border-gray-300/75 rounded-sm px-2 py-1.5 mt-1" value={entryPrice} onChange={(e) => setEntryPrice(e.target.value)} placeholder="Masukkan harga" />
             </div>
             <div className="flex justify-end gap-x-2">
               <button className="modal-close bg-gray-500 uppercase font-medium text-sm text-white rounded-sm px-3.5 py-1.5 mt-3 smooth-trans hover:bg-gray-600">Batal</button>
