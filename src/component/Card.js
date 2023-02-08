@@ -12,9 +12,9 @@ const Card = ({ year, date, detail }) => {
 
               return (
                 <tr key={i} className="border-t border-gray-300/75">
-                  <td className="pl-1.5 py-1.5">{item.jam}</td>
-                  <td className="pl-1.5 py-1.5">{item.nama}</td>
-                  <td className="text-right whitespace-nowrap pl-1.5 py-1.5">Rp {(item.pengeluaran).toLocaleString().replaceAll(',', '.')}</td>
+                  <td className="align-top pl-1.5 py-1.5">{item.jam}</td>
+                  <td className="align-top pl-1.5 py-1.5">{item.nama}</td>
+                  <td className="align-top text-right whitespace-nowrap pl-1.5 py-1.5">Rp {(item.pengeluaran).toLocaleString().replaceAll(',', '.')}</td>
                 </tr>
               )
             })}
