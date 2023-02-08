@@ -94,9 +94,9 @@ function App() {
       <div className={`min-h-screen relative p-4 ${isModalOpen ? 'h-screen overflow-hidden' : ''}`}>
         {/* Header */}
         <header className="text-left sm:text-center">
-          <h1 className="text-2xl sm:text-3xl">Diari Jajan {month} {year}</h1>
+          <h1 className="font-medium text-2xl sm:text-3xl">Diari Jajan {month} {year}</h1>
           <p className="text-base sm:text-xl">Pengeluaran Bulan Ini Rp {(total.current).toLocaleString().replaceAll(',', '.')}</p>
-          <button className="modal-open w-full sm:w-fit bg-violet-800 uppercase font-medium text-sm text-white rounded-sm px-5 py-2 mt-3 smooth-trans hover:bg-violet-900">Tambah Item</button>
+          <button className="modal-open w-full sm:w-fit bg-violet-800 uppercase tracking-wide text-sm text-white rounded-sm px-5 py-2 mt-3 smooth-trans hover:bg-violet-900">Tambah Item</button>
         </header>
 
         {/* Cards */}
@@ -123,8 +123,8 @@ function App() {
               <input type="number" id="harga" className="w-full border border-gray-300/75 rounded-sm px-2 py-1.5 mt-1" value={entryPrice} onChange={(e) => setEntryPrice(e.target.value)} placeholder="Masukkan harga" />
             </div>
             <div className="flex justify-end gap-x-2">
-              <button className="modal-close w-full bg-gray-500 uppercase font-medium text-sm text-white rounded-sm px-3.5 py-1.5 mt-3 smooth-trans hover:bg-gray-600">Batal</button>
-              <button type="submit" className="w-full bg-violet-800 uppercase font-medium text-sm text-white rounded-sm px-3.5 py-1.5 mt-3 smooth-trans hover:bg-violet-900">Kirim</button>
+              <button className="modal-close w-full bg-gray-500 uppercase tracking-wide text-sm text-white rounded-sm px-3.5 py-1.5 mt-3 smooth-trans hover:bg-gray-600">Batal</button>
+              <button type="submit" className="w-full bg-violet-800 uppercase tracking-wide text-sm text-white rounded-sm px-3.5 py-1.5 mt-3 smooth-trans hover:bg-violet-900">Kirim</button>
             </div>
           </form>
         </div>

@@ -4,7 +4,7 @@ const Card = ({ year, date, detail }) => {
   return (
     <>
       <div className="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 text-sm border border-gray-300/50 rounded-sm shadow-[0_1px_4px_0_rgba(0,0,0,0.25)] px-2.5 py-3.5">
-        <h2 className="font-bold text-lg pb-1.5">{date.split(year)}</h2>
+        <h2 className="font-semibold text-lg pb-1.5">{date.split(year)}</h2>
         <table className="table-auto w-full">
           <tbody>
             {detail.map((item, i) => {
@@ -20,7 +20,7 @@ const Card = ({ year, date, detail }) => {
             })}
           </tbody>
         </table>
-        <div className="flex justify-end gap-x-8 font-bold border-t-2 border-gray-300/75 pt-1.5">
+        <div className="flex justify-end gap-x-8 font-semibold border-t-2 border-gray-300/75 pt-1.5">
           <p>Total</p>
           <p>Rp {total.toLocaleString().replaceAll(',', '.')}</p>
         </div>
